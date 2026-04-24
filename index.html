@@ -298,14 +298,32 @@ document.getElementById('nameInput').value = myName;
             });
         }
 
-        async function addItem(type) {
-            const input = document.getElementById(type + 'Input');
-            if (myName === 'Anonymous') document.getElementById('setNameBtn').onclick();
-            if (!user || !input.value.trim() || myName === 'Anonymous') return;
-            const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
-            await addDoc(collection(db, ...path), { text: input.value.trim(), type: type, authorName: myName, createdAt: Date.now() });
-            input.value = '';
+     async function addItem(type) {
+    const input = document.getElementById(type + 'Input');
+    
+    // Check if myName is missing and try to grab it from the input box
+    if (!myName || myName === 'Anonymous') {
+        const nameField = document.getElementById('nameInput');
+        if (nameField && nameField.value.trim()) {
+            myName = nameField.value.trim();
         }
+    }
+
+    // Only stop if the input box for the book/movie is empty
+    if (!input.value.trim()) return;
+
+    const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
+    
+    // Send to Firebase
+    await addDoc(collection(db, ...path), { 
+        text: input.value.trim(), 
+        type: type, 
+        authorName: myName, 
+        createdAt: Date.now() 
+    });
+    
+    input.value = ''; // Clear the input field
+}
 
         async function deleteItem(id) {
             const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies', id];
