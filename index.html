@@ -220,7 +220,7 @@
     </footer>
 
     <!-- Firebase Script (Cloud Features) -->
-    <script type="module">
+   <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, onAuthStateChanged, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -233,26 +233,23 @@
 
         let user = null;
         let myName = localStorage.getItem('saraContributorName') || 'Anonymous';
-        document.getElementById('currentNameDisplay').innerText = myName;
 
-        // Connect the "Set Name" button
-       // This function grabs the value from the new input box you just added
-const updateNameValue = () => {
-    const nameInputField = document.getElementById('nameInput');
-    const n = nameInputField.value;
-    if (n && n.trim()) {
-        myName = n.trim();
-        localStorage.setItem('saraContributorName', myName);
-        // This gives you a little blue flash so you know it saved!
-        nameInputField.classList.add('text-blue-400');
-        setTimeout(() => nameInputField.classList.remove('text-blue-400'), 500);
-    }
-};
+        // Set the initial value in the box
+        const nameInput = document.getElementById('nameInput');
+        if (nameInput) nameInput.value = myName;
 
-document.getElementById('setNameBtn').onclick = updateNameValue;
+        // Save name function
+        const updateNameValue = () => {
+            const n = nameInput.value;
+            if (n && n.trim()) {
+                myName = n.trim();
+                localStorage.setItem('saraContributorName', myName);
+                nameInput.classList.add('text-green-500');
+                setTimeout(() => nameInput.classList.remove('text-green-500'), 500);
+            }
+        };
 
-// This ensures that when the page loads, your saved name appears in the box
-document.getElementById('nameInput').value = myName;
+        document.getElementById('setNameBtn').onclick = updateNameValue;
 
         // Firebase Auth
         onAuthStateChanged(auth, u => {
@@ -298,39 +295,32 @@ document.getElementById('nameInput').value = myName;
             });
         }
 
-     async function addItem(type) {
-    const input = document.getElementById(type + 'Input');
-    
-    // Check if myName is missing and try to grab it from the input box
-    if (!myName || myName === 'Anonymous') {
-        const nameField = document.getElementById('nameInput');
-        if (nameField && nameField.value.trim()) {
-            myName = nameField.value.trim();
+        async function addItem(type) {
+            const input = document.getElementById(type + 'Input');
+            
+            // Re-check name right before adding
+            if (nameInput.value.trim()) {
+                myName = nameInput.value.trim();
+                localStorage.setItem('saraContributorName', myName);
+            }
+
+            if (!user || !input.value.trim()) return;
+
+            const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
+            await addDoc(collection(db, ...path), { 
+                text: input.value.trim(), 
+                type: type, 
+                authorName: myName, 
+                createdAt: Date.now() 
+            });
+            input.value = '';
         }
-    }
-
-    // Only stop if the input box for the book/movie is empty
-    if (!input.value.trim()) return;
-
-    const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
-    
-    // Send to Firebase
-    await addDoc(collection(db, ...path), { 
-        text: input.value.trim(), 
-        type: type, 
-        authorName: myName, 
-        createdAt: Date.now() 
-    });
-    
-    input.value = ''; // Clear the input field
-}
 
         async function deleteItem(id) {
             const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies', id];
             await deleteDoc(doc(db, ...path));
         }
 
-        // Attach buttons to the functions
         document.getElementById('addBookBtn').onclick = () => addItem('book');
         document.getElementById('addMovieBtn').onclick = () => addItem('movie');
         document.getElementById('bookInput').onkeypress = (e) => { if (e.key === 'Enter') addItem('book'); };
