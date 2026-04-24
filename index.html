@@ -220,7 +220,7 @@
     </footer>
 
     <!-- Firebase Script (Cloud Features) -->
-   <script type="module">
+<script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, onAuthStateChanged, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -234,11 +234,9 @@
         let user = null;
         let myName = localStorage.getItem('saraContributorName') || 'Anonymous';
 
-        // Set the initial value in the box
         const nameInput = document.getElementById('nameInput');
         if (nameInput) nameInput.value = myName;
 
-        // Save name function
         const updateNameValue = () => {
             const n = nameInput.value;
             if (n && n.trim()) {
@@ -249,9 +247,9 @@
             }
         };
 
-        document.getElementById('setNameBtn').onclick = updateNameValue;
+        const setNameBtn = document.getElementById('setNameBtn');
+        if (setNameBtn) setNameBtn.onclick = updateNameValue;
 
-        // Firebase Auth
         onAuthStateChanged(auth, u => {
             user = u;
             if (user) setupSync();
@@ -278,6 +276,7 @@
 
         function render(type, items) {
             const list = document.getElementById(type + 'List');
+            if (!list) return;
             list.innerHTML = '';
             items.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
             items.forEach(item => {
@@ -297,22 +296,18 @@
 
         async function addItem(type) {
             const input = document.getElementById(type + 'Input');
-            
-            // Re-check name right before adding
             if (nameInput.value.trim()) {
                 myName = nameInput.value.trim();
                 localStorage.setItem('saraContributorName', myName);
             }
-
             if (!user || !input.value.trim()) return;
-
             const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
             await addDoc(collection(db, ...path), { 
                 text: input.value.trim(), 
                 type: type, 
                 authorName: myName, 
                 createdAt: Date.now() 
-            );
+            });
             input.value = '';
         }
 
@@ -321,27 +316,17 @@
             await deleteDoc(doc(db, ...path));
         }
 
-// Attach buttons to the functions safely
-        const bookBtn = document.getElementById('addBookBtn');
-        if (bookBtn) {
-            bookBtn.onclick = () => addItem('book');
-        }
+        const addBookBtn = document.getElementById('addBookBtn');
+        if (addBookBtn) addBookBtn.onclick = () => addItem('book');
 
-        const movieBtn = document.getElementById('addMovieBtn');
-        if (movieBtn) {
-            movieBtn.onclick = () => addItem('movie');
-        }
+        const addMovieBtn = document.getElementById('addMovieBtn');
+        if (addMovieBtn) addMovieBtn.onclick = () => addItem('movie');
 
-        // Attach Enter key support for the input fields
-        const bookIn = document.getElementById('bookInput');
-        if (bookIn) {
-            bookIn.onkeypress = (e) => { if (e.key === 'Enter') addItem('book'); };
-        }
+        const bookInput = document.getElementById('bookInput');
+        if (bookInput) bookInput.onkeypress = (e) => { if (e.key === 'Enter') addItem('book'); };
 
-        const movieIn = document.getElementById('movieInput');
-        if (movieIn) {
-            movieIn.onkeypress = (e) => { if (e.key === 'Enter') addItem('movie'); };
-        }
+        const movieInput = document.getElementById('movieInput');
+        if (movieInput) movieInput.onkeypress = (e) => { if (e.key === 'Enter') addItem('movie'); };
     </script>
 </body>
 </html>
