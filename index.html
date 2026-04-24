@@ -48,19 +48,26 @@
         </div>
     </nav>
 
-    <!-- Header Section -->
+    <!-- Header Section with Transparent Photo -->
     <header class="bg-white pt-12 pb-8 border-b">
-        <div class="max-w-4xl mx-auto px-6 text-center md:text-left">
-            <h1 class="text-4xl font-extrabold text-slate-900 mb-2">Sara Brumfield</h1>
-            <p class="text-slate-500 flex flex-wrap justify-center md:justify-start gap-4 text-sm">
-                <span>Rushville, IN</span>
-                <span>•</span>
-                <span>765-561-5461</span>
-                <span>•</span>
-                <a href="mailto:brumfields@xavier.edu" class="hover:text-blue-600 transition-colors border-b border-dotted border-slate-300">brumfields@xavier.edu</a>
-                <span>•</span>
-                <a href="https://www.linkedin.com/in/sara-brumfield2027" target="_blank" class="hover:text-blue-600 transition-colors border-b border-dotted border-slate-300">LinkedIn</a>
-            </p>
+        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+            <!-- Profile Image (No background) -->
+            <div class="w-44 h-44 md:w-56 md:h-56 flex-shrink-0">
+                <img src="profile.png" alt="Sara Brumfield" class="w-full h-full object-contain">
+            </div>
+            
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">Sara Brumfield</h1>
+                <p class="text-slate-500 flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium">
+                    <span>Rushville, IN</span>
+                    <span>•</span>
+                    <span>765-561-5461</span>
+                    <span>•</span>
+                    <a href="mailto:brumfields@xavier.edu" class="hover:text-blue-600 transition-colors border-b border-dotted border-slate-300 pb-0.5">brumfields@xavier.edu</a>
+                    <span>•</span>
+                    <a href="https://www.linkedin.com/in/sara-brumfield2027" target="_blank" class="hover:text-blue-600 transition-colors border-b border-dotted border-slate-300 pb-0.5">LinkedIn</a>
+                </p>
+            </div>
         </div>
     </header>
 
@@ -74,7 +81,7 @@
                     <h3 class="text-xl font-bold text-blue-700">Xavier University</h3>
                     <p class="text-slate-600 font-semibold mb-2">Bachelor of Science in Business Administration | Dec. 2026</p>
                     <div class="flex flex-wrap gap-2 text-sm mt-4">
-                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full border border-blue-100 font-medium">GPA: 3.867</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full border border-blue-100 font-bold">GPA: 3.867</span>
                         <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Major: Business Management</span>
                         <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Minor: Operations & Supply Chain</span>
                         <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Minor: Economics</span>
@@ -87,7 +94,7 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="p-5 bg-white rounded-xl border hover:border-blue-200 hover:shadow-md transition-all">
                         <h4 class="font-bold text-slate-800 text-lg">Mortar Board</h4>
-                        <p class="text-sm text-slate-500 mt-2">Recognized for outstanding scholarship, leadership, and distinguished service (2024 - Present).</p>
+                        <p class="text-sm text-slate-500 mt-2">Member recognized for outstanding scholarship, leadership, and distinguished service (2024 - Present).</p>
                     </div>
                     <div class="p-5 bg-white rounded-xl border hover:border-blue-200 hover:shadow-md transition-all">
                         <h4 class="font-bold text-slate-800 text-lg">Women in Business</h4>
@@ -104,8 +111,8 @@
                 <h2 class="text-2xl font-bold text-slate-900 mb-6 font-semibold">Skills & Certificates</h2>
                 <div class="bg-white p-6 rounded-xl border border-dashed border-slate-300 grid md:grid-cols-2 gap-6">
                     <ul class="text-slate-600 text-sm space-y-3">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Microsoft 365 Office Proficiency</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Google Applications Proficiency</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Microsoft 365 (Word, Excel, PowerPoint, Outlook)</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Google Apps (Docs, Slides, Sheets, Gmail)</li>
                     </ul>
                     <ul class="text-slate-600 text-sm space-y-3">
                         <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Project Management Skills for Leaders</li>
@@ -117,7 +124,7 @@
 
         <!-- Tab: Experience -->
         <div id="experience" class="tab-content space-y-8">
-            <h2 class="text-2xl font-bold text-slate-900 font-semibold">Professional History</h2>
+            <h2 class="text-2xl font-bold text-slate-900 font-semibold">Professional Experience</h2>
             
             <div class="relative pl-8 border-l-2 border-slate-200 space-y-12">
                 <!-- RAS Supply -->
@@ -129,7 +136,7 @@
                         <li>Spearheaded company start-up efforts with organization, task prioritization, and risk management.</li>
                         <li>Organized systems of award management in accordance with the government.</li>
                         <li>Managed vendor relationships and contracts for 20 potential vendors.</li>
-                        <li>Helped create a website to market the company and sell merchandise.</li>
+                        <li>Assisted in website creation to market the company and sell merchandise.</li>
                     </ul>
                 </div>
 
@@ -151,7 +158,7 @@
         <div id="hobbies" class="tab-content space-y-12">
             <div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-3 font-semibold">Hobbies & Interests</h2>
-                <p class="text-slate-500 text-base">A quick look at my current reading list and favorite films.</p>
+                <p class="text-slate-500 text-base">An interactive way to see what I'm currently reading and watching.</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
@@ -161,7 +168,7 @@
                         <span>📚 Book Tracker</span>
                     </h3>
                     <div class="flex gap-2">
-                        <input type="text" id="bookInput" placeholder="Add a book title..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        <input type="text" id="bookInput" placeholder="Add book title..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                         <button onclick="addItem('book')" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-sm">Add</button>
                     </div>
                     <ul id="bookList" class="space-y-2 flex-1"></ul>
@@ -170,10 +177,10 @@
                 <!-- Movie Catalog -->
                 <section class="bg-white p-6 rounded-2xl border shadow-sm space-y-6 border-t-4 border-t-blue-500 flex flex-col">
                     <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                        <span>🎬 Favorite Movie Catalog</span>
+                        <span>🎬 Movie Catalog</span>
                     </h3>
                     <div class="flex gap-2">
-                        <input type="text" id="movieInput" placeholder="Add a movie title..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        <input type="text" id="movieInput" placeholder="Add movie title..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                         <button onclick="addItem('movie')" class="bg-slate-800 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-slate-900 active:scale-95 transition-all shadow-sm">Add</button>
                     </div>
                     <ul id="movieList" class="space-y-2 flex-1"></ul>
@@ -221,7 +228,7 @@
             input.value = '';
         }
 
-        // Support for the Enter key
+        // Event listeners for Enter key support
         document.getElementById('bookInput').addEventListener('keypress', (e) => { 
             if (e.key === 'Enter') addItem('book'); 
         });
