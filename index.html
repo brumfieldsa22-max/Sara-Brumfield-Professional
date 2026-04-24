@@ -312,7 +312,7 @@
                 type: type, 
                 authorName: myName, 
                 createdAt: Date.now() 
-            });
+            );
             input.value = '';
         }
 
@@ -321,10 +321,27 @@
             await deleteDoc(doc(db, ...path));
         }
 
-        document.getElementById('addBookBtn').onclick = () => addItem('book');
-        document.getElementById('addMovieBtn').onclick = () => addItem('movie');
-        document.getElementById('bookInput').onkeypress = (e) => { if (e.key === 'Enter') addItem('book'); };
-        document.getElementById('movieInput').onkeypress = (e) => { if (e.key === 'Enter') addItem('movie'); };
+// Attach buttons to the functions safely
+        const bookBtn = document.getElementById('addBookBtn');
+        if (bookBtn) {
+            bookBtn.onclick = () => addItem('book');
+        }
+
+        const movieBtn = document.getElementById('addMovieBtn');
+        if (movieBtn) {
+            movieBtn.onclick = () => addItem('movie');
+        }
+
+        // Attach Enter key support for the input fields
+        const bookIn = document.getElementById('bookInput');
+        if (bookIn) {
+            bookIn.onkeypress = (e) => { if (e.key === 'Enter') addItem('book'); };
+        }
+
+        const movieIn = document.getElementById('movieInput');
+        if (movieIn) {
+            movieIn.onkeypress = (e) => { if (e.key === 'Enter') addItem('movie'); };
+        }
     </script>
 </body>
 </html>
