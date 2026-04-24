@@ -36,7 +36,6 @@
 </head>
 <body class="text-slate-800">
 
-    <!-- Sticky Navigation -->
     <nav class="bg-white border-b sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
             <span class="text-lg font-bold text-blue-700">SB</span>
@@ -48,12 +47,10 @@
         </div>
     </nav>
 
-    <!-- Header Section with Transparent Photo -->
     <header class="bg-white pt-12 pb-8 border-b">
         <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-            <!-- Profile Image (No background) -->
             <div class="w-44 h-44 md:w-56 md:h-56 flex-shrink-0">
-                <img src="profile.png" alt="Sara Brumfield" class="w-full h-full object-contain">
+                <img src="profile.png" alt="Sara Brumfield" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/200?text=SB'">
             </div>
             
             <div class="text-center md:text-left">
@@ -73,7 +70,6 @@
 
     <main class="max-w-4xl mx-auto px-6 py-12">
         
-        <!-- Tab: Bio & Education -->
         <div id="bio" class="tab-content active space-y-12">
             <section>
                 <h2 class="text-2xl font-bold text-slate-900 mb-6">Education</h2>
@@ -82,159 +78,146 @@
                     <p class="text-slate-600 font-semibold mb-2">Bachelor of Science in Business Administration | Dec. 2026</p>
                     <div class="flex flex-wrap gap-2 text-sm mt-4">
                         <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full border border-blue-100 font-bold">GPA: 3.867</span>
-                        <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Major: Business Management</span>
-                        <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Minor: Operations & Supply Chain</span>
-                        <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Minor: Economics</span>
+                        <span class="bg-slate-50 text-slate-700 px-3 py-1 rounded-full border border-slate-200">Business Management</span>
                     </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 font-semibold">Campus Involvement</h2>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="p-5 bg-white rounded-xl border hover:border-blue-200 hover:shadow-md transition-all">
-                        <h4 class="font-bold text-slate-800 text-lg">Mortar Board</h4>
-                        <p class="text-sm text-slate-500 mt-2">Member recognized for outstanding scholarship, leadership, and distinguished service (2024 - Present).</p>
-                    </div>
-                    <div class="p-5 bg-white rounded-xl border hover:border-blue-200 hover:shadow-md transition-all">
-                        <h4 class="font-bold text-slate-800 text-lg">Women in Business</h4>
-                        <p class="text-sm text-slate-500 mt-2">Member empowering women in the business community (2024).</p>
-                    </div>
-                    <div class="p-5 bg-white rounded-xl border hover:border-blue-200 hover:shadow-md transition-all md:col-span-2">
-                        <h4 class="font-bold text-slate-800 text-lg">Chi Omega</h4>
-                        <p class="text-sm text-slate-500 mt-2">Assistant Recruitment Chair; Created merchandise and designed recruitment events (2022).</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 font-semibold">Skills & Certificates</h2>
-                <div class="bg-white p-6 rounded-xl border border-dashed border-slate-300 grid md:grid-cols-2 gap-6">
-                    <ul class="text-slate-600 text-sm space-y-3">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Microsoft 365 (Word, Excel, PowerPoint, Outlook)</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Google Apps (Docs, Slides, Sheets, Gmail)</li>
-                    </ul>
-                    <ul class="text-slate-600 text-sm space-y-3">
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Project Management Skills for Leaders</li>
-                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Word for Mac Essential Training</li>
-                    </ul>
                 </div>
             </section>
         </div>
 
-        <!-- Tab: Experience -->
         <div id="experience" class="tab-content space-y-8">
-            <h2 class="text-2xl font-bold text-slate-900 font-semibold">Professional Experience</h2>
-            
+            <h2 class="text-2xl font-bold text-slate-900 font-semibold">Professional History</h2>
             <div class="relative pl-8 border-l-2 border-slate-200 space-y-12">
-                <!-- RAS Supply -->
                 <div class="relative">
                     <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm"></div>
                     <h3 class="text-xl font-bold">Department Head | RAS Supply</h3>
-                    <p class="text-sm text-blue-600 font-semibold mb-4">Rushville, IN | January 2024 - Present</p>
+                    <p class="text-sm text-blue-600 font-semibold mb-4">Rushville, IN | 2024 - Present</p>
                     <ul class="text-slate-600 space-y-3 list-disc pl-5">
-                        <li>Spearheaded company start-up efforts with organization, task prioritization, and risk management.</li>
-                        <li>Organized systems of award management in accordance with the government.</li>
-                        <li>Managed vendor relationships and contracts for 20 potential vendors.</li>
-                        <li>Assisted in website creation to market the company and sell merchandise.</li>
-                    </ul>
-                </div>
-
-                <!-- Tech Entr -->
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
-                    <h3 class="text-xl font-bold">New Product Design | Technical Entrepreneurship</h3>
-                    <p class="text-sm text-slate-500 font-semibold mb-4">Terre Haute, IN | May 2021</p>
-                    <ul class="text-slate-600 space-y-3 list-disc pl-5 text-sm">
-                        <li>Developed 3 business plans and redefined ideas using business models and interviewing processes.</li>
-                        <li>Presented final plans using PowerPoint and Panopto, integrating feedback for project success.</li>
-                        <li>Utilized lean setup, revenue models, and customer demographics for product development.</li>
+                        <li>Managed start-up efforts, vendor contracts, and marketing.</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Tab: Hobbies -->
         <div id="hobbies" class="tab-content space-y-12">
-            <div>
-                <h2 class="text-3xl font-bold text-slate-900 mb-3 font-semibold">Hobbies & Interests</h2>
-                <p class="text-slate-500 text-base">An interactive way to see what I'm currently reading and watching.</p>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-100 p-6 rounded-2xl border border-slate-200">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900 mb-1">Community Favorites</h2>
+                    <p class="text-slate-500 text-sm">Everyone's additions are saved to the cloud!</p>
+                </div>
+                <div class="bg-white px-4 py-3 rounded-xl border shadow-sm flex items-center gap-4">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase font-bold text-slate-400">Your Guest Name</span>
+                        <span id="currentNameDisplay" class="font-bold text-blue-700">Anonymous</span>
+                    </div>
+                    <button onclick="setUserName()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-blue-700 transition-all">Set Name</button>
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Book Tracker -->
-                <section class="bg-white p-6 rounded-2xl border shadow-sm space-y-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                        <span>📚 Book Tracker</span>
-                    </h3>
+                <section class="bg-white p-6 rounded-2xl border shadow-sm space-y-6">
+                    <h3 class="text-xl font-bold text-slate-800">📚 Community Books</h3>
                     <div class="flex gap-2">
-                        <input type="text" id="bookInput" placeholder="Add book title..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
-                        <button onclick="addItem('book')" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-sm">Add</button>
+                        <input type="text" id="bookInput" placeholder="Add book..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200">
+                        <button onclick="addItem('book')" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-bold">Add</button>
                     </div>
-                    <ul id="bookList" class="space-y-2 flex-1"></ul>
+                    <ul id="bookList" class="space-y-4"></ul>
                 </section>
 
-                <!-- Movie Catalog -->
-                <section class="bg-white p-6 rounded-2xl border shadow-sm space-y-6 border-t-4 border-t-blue-500 flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
-                        <span>🎬 Movie Catalog</span>
-                    </h3>
+                <section class="bg-white p-6 rounded-2xl border shadow-sm border-t-4 border-t-blue-500">
+                    <h3 class="text-xl font-bold text-slate-800">🎬 Community Movies</h3>
                     <div class="flex gap-2">
-                        <input type="text" id="movieInput" placeholder="Add movie title..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
-                        <button onclick="addItem('movie')" class="bg-slate-800 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-slate-900 active:scale-95 transition-all shadow-sm">Add</button>
+                        <input type="text" id="movieInput" placeholder="Add movie..." class="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-200">
+                        <button onclick="addItem('movie')" class="bg-slate-800 text-white px-5 py-2 rounded-lg text-sm font-bold">Add</button>
                     </div>
-                    <ul id="movieList" class="space-y-2 flex-1"></ul>
+                    <ul id="movieList" class="space-y-4"></ul>
                 </section>
             </div>
         </div>
-
     </main>
 
-    <footer class="py-12 border-t mt-12 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center text-slate-400 text-sm">
-            &copy; 2026 Sara Brumfield | Professional Portfolio | Developed with AI
-        </div>
-    </footer>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-    <script>
-        // Tab Navigation Logic
-        function showTab(tabId, event) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        let user = null;
+        let myName = localStorage.getItem('saraContributorName') || 'Anonymous';
+        document.getElementById('currentNameDisplay').innerText = myName;
+
+        window.setUserName = function() {
+            const n = prompt("What's your name?", myName);
+            if (n && n.trim()) {
+                myName = n.trim();
+                localStorage.setItem('saraContributorName', myName);
+                document.getElementById('currentNameDisplay').innerText = myName;
+            }
+        };
+
+        onAuthStateChanged(auth, u => {
+            user = u;
+            if (user) setupSync();
+        });
+
+        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) signInWithCustomToken(auth, __initial_auth_token);
+        else signInAnonymously(auth);
+
+        function setupSync() {
+            const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
+            onSnapshot(collection(db, ...path), snapshot => {
+                const books = [], movies = [];
+                snapshot.forEach(doc => {
+                    const d = { id: doc.id, ...doc.data() };
+                    (d.type === 'book') ? books.push(d) : movies.push(d);
+                });
+                render('book', books);
+                render('movie', movies);
             });
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Logic for adding Books or Movies
-        function addItem(type) {
-            const input = document.getElementById(type + 'Input');
+        function render(type, items) {
             const list = document.getElementById(type + 'List');
-            
-            if (!input || !list || input.value.trim() === '') return;
-
-            const li = document.createElement('li');
-            li.className = "flex justify-between items-center bg-slate-50 p-3 rounded-lg border border-slate-100 group animate-fadeIn hover:bg-white transition-colors";
-            li.innerHTML = `
-                <span class="text-sm font-medium text-slate-700">${input.value}</span>
-                <button onclick="this.parentElement.remove()" class="text-red-400 hover:text-red-600 text-xs opacity-0 group-hover:opacity-100 transition-opacity font-semibold">Remove</button>
-            `;
-            
-            list.appendChild(li);
-            input.value = '';
+            list.innerHTML = '';
+            items.sort((a, b) => a.createdAt - b.createdAt);
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = "flex flex-col bg-slate-50 p-4 rounded-xl border border-slate-100 group";
+                li.innerHTML = `
+                    <div class="flex justify-between">
+                        <span class="font-bold text-slate-800">${item.text}</span>
+                        <button onclick="window.deleteItem('${item.id}')" class="text-red-400 opacity-0 group-hover:opacity-100 text-xs font-bold">Remove</button>
+                    </div>
+                    <div class="mt-2 text-[10px] font-bold text-slate-400 uppercase italic">Added by: <span class="text-blue-600">${item.authorName || 'Guest'}</span></div>
+                `;
+                list.appendChild(li);
+            });
         }
 
-        // Event listeners for Enter key support
-        document.getElementById('bookInput').addEventListener('keypress', (e) => { 
-            if (e.key === 'Enter') addItem('book'); 
-        });
-        document.getElementById('movieInput').addEventListener('keypress', (e) => { 
-            if (e.key === 'Enter') addItem('movie'); 
-        });
+        window.addItem = async (type) => {
+            const input = document.getElementById(type + 'Input');
+            if (myName === 'Anonymous') window.setUserName();
+            if (!user || !input.value.trim() || myName === 'Anonymous') return;
+            const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies'];
+            await addDoc(collection(db, ...path), { text: input.value.trim(), type: type, authorName: myName, createdAt: Date.now() });
+            input.value = '';
+        };
+
+        window.deleteItem = async (id) => {
+            const path = ['artifacts', appId, 'public', 'data', 'collaborativeHobbies', id];
+            await deleteDoc(doc(db, ...path));
+        };
+
+        window.showTab = function(id, e) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            e.currentTarget.classList.add('active');
+        };
     </script>
 </body>
 </html>
